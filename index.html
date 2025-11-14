@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            width: 1100px;
+            margin: 600px;
+            margin-left: 25%;
+            border: 2px solid black;
+            border-radius: 10px;
+            display: grid;
+            margin-top: 300px;
+        }
+        .card{
+            display: flex;
+            gap: 50px;
+            margin-left: 50px;
+            margin-top: 20px;
+            width: 200px;
+            height: 290px;
+        }
+        #form{
+            margin-left: 400px;
+            margin-top: -20px;
+        }
+        #piyoda, #samakat, #velik, #motsikl, #moshin, #vertalyot{
+            width: 250px;
+            height: 260px;
+            border: 2px solid black;
+            background-color: lightgray;
+            text-align: center;
+            border-radius: 10px;
+        }
+        #btn{
+            margin-left: 30px;
+            width: 150px;
+            height: 30px;
+            background-color: rgb(81, 88, 180);
+            color: white;
+            border: 1px solid black;
+            border-radius: 5px;
+            font-size: 1.9vh;
+        }
+        #masofa{
+            margin-left: 30px;
+            width: 150px;
+            height: 25px;
+            border: 1px solid black;
+            border-radius: 5px;
+        }
+        #hisobla:hover{
+            background-color: navy;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 style="text-align: center;">Kim birinchi!</h1>
+        <form id="form" action="sumbit">
+            <label for="text" style="font-size: 2.3vh;margin-left: -50px;">Masofa</label>
+            <input type="text" id="masofa">
+            <button id="btn">Hisobla</button>
+        </form>
+        <div class="card">
+            <div id="piyoda"><img src="./walk.png" alt="">
+            <h3>piyoda</h3>
+        <p id="piyoda-result">....</p>
+        <p id="piyoda-time">....</p></div>
+            <div id="samakat"><img src="./scooter.png" alt="">
+             <h3>samakat</h3>
+        <p id="samakat-result">....</p>
+        <p id="samakat-time">....</p></div>
+            <div id="velik"><img src="./bike.png" alt="">
+             <h3>velosiped</h3>
+        <p id="velik-result">....</p>
+        <p id="velik-time">....</p></div>
+            <div id="motsikl"><img src="./motorcycle.png" alt="">
+             <h3>motosikil</h3>
+        <p id="motsikl-result">....</p>
+        <p id="motsikl-time">....</p></div>
+            <div id="moshin"><img src="./car.png" alt="">
+             <h3>mashina</h3>
+        <p id="moshin-result">....</p>
+        <p id="moshin-time">....</p></div>
+            <div id="vertalyot"><img src="./helicopter.png" alt="">
+             <h3>vertalyot</h3>
+        <p id="vertalyot-result">....</p>
+        <p id="vertalyot-time">....</p></div>
+        </div>
+    </div>
+    <script>
+        let piyodaResult = document.getElementById("piyoda-result");
+        let piyodaTime = document.getElementById("piyoda-time");
+        let samakatResult = document.getElementById("samakat-result");
+        let samakatTime = document.getElementById("samakat-time");
+        let velikResult = document.getElementById("velik-result");
+        let velikTime = document.getElementById("velik-time");
+        let motsiklResult = document.getElementById("motsikl-result");
+        let motsiklTime = document.getElementById("motsikl-time");
+        let moshinResult = document.getElementById("moshin-result");
+        let moshinTime = document.getElementById("moshin-time");
+        let vertalyotResult = document.getElementById("vertalyot-result");
+        let vertalyotTime = document.getElementById("vertalyot-time");
+
+        let enterNumber = document.getElementById("masofa");
+        let hisobla = document.getElementById("btn");
+
+        form.addEventListener("submit", function(event){
+            event.preventDefault();
+
+            let piyoda = Math.round(((((enterNumber.value) / 8) - (Math.floor((enterNumber.value) / 8))).toFixed(2)) * 60)
+        piyodaResult.textContent = Math.floor((enterNumber.value) / 8)
+        piyodaTime.textContent = piyoda;
+            let samakat = Math.round((((enterNumber.value))) / 20)
+        samakatResult.textContent = Math.floor((enterNumber.value) / 20)
+        samakatTime.textContent = samakat;
+            let velik = Math.round((((enterNumber.value))) / 15)
+        velikResult.textContent = Math.floor((enterNumber.value) / 15)
+        velikTime.textContent = velik;
+           let motsikl = Math.round((((enterNumber.value))) / 40)
+        motsiklResult.textContent = Math.floor((enterNumber.value) / 40)
+        motsiklTime.textContent = motsikl;
+           let moshin = Math.round((((enterNumber.value))) / 90)
+        moshinResult.textContent = Math.floor((enterNumber.value) / 90)
+        moshinTime.textContent = moshin;
+           let vertalyot = Math.round((((enterNumber.value))) / 300)
+        vertalyotResult.textContent = Math.floor((enterNumber.value) / 300)
+        vertalyotTime.textContent = vertalyot;
+        });
+    </script>
+</body>
+</html>
